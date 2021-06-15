@@ -70,13 +70,13 @@ class NetworkConfig(DefaultConfig):
    def __init__(self, *arg, **kw):
       super(NetworkConfig, self).__init__(*arg, **kw)
       dir_path = os.environ['MYCELIUM_CFG_ROOT']
-      self.cfg_file = os.path.join(dir_path, 'network.yaml')
+      self.n_cfg_file = os.path.join(dir_path, 'network.yaml')
       try:
-         cfg = yaml.safe_load(open(self.cfg_file))
+         cfg = yaml.safe_load(open(self.n_cfg_file))
       except:
-         cfg = {}
+         cfg = self.__dict__
+      
       self.__dict__.update(cfg)
-
       self.udp_ext = self.generate_external_ports()
 
    def generate_external_ports(self):
