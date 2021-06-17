@@ -84,10 +84,8 @@ class CameraT265(Camera):
                     'reset_counter',
                     'gps_1_lat',
                     'gps_1_lon',
-                    'gps_1_fix_type',
                     'gps_2_lat',
                     'gps_2_lon',
-                    'gps_2_fix_type'
                 ]
                 csvwriter.writerow(header)        
                 

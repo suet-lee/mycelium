@@ -60,13 +60,13 @@ class DronekitConnector:
 
         # check if waypoint is valid
 
-        self.mission.next(waypoint)
+        self.mission.next = waypoint
 
     def get_gps(self):
         gps = self.conn.location.global_frame
         if gps:
-            return [gps.lat, gps.lon, gps.fix_type]
-        return [None, None, None]
+            return [gps.lat, gps.lon]
+        return [None, None]
 
     def disconnect(self):
         self.conn.close()

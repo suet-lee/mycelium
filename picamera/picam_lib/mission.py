@@ -173,7 +173,7 @@ class WaypointMissionExec:
         with open(filename, 'a+', newline='') as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=',')
             if not file_exists:
-                header = ['image_timestamp', 'gps_lat', 'gps_lon', 'gps_fix_type']
+                header = ['image_timestamp', 'gps_lat', 'gps_lon']
                 csvwriter.writerow(header)
 
             while not self.close_mission:
@@ -233,7 +233,7 @@ class FilterCapture:
         with open(filename, 'a+', newline='') as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=',')
             if not file_exists:
-                header = ['image_timestamp', 'gps_lat', 'gps_lon', 'gps_fix_type']
+                header = ['image_timestamp', 'gps_lat', 'gps_lon']
                 csvwriter.writerow(header)
 
             while not self.close_mission:

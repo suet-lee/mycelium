@@ -457,10 +457,8 @@ class CameraD435(Camera):
         gps_header = [
             'gps_1_lat',
             'gps_1_lon',
-            'gps_1_fix_type',
             'gps_2_lat',
             'gps_2_lon',
-            'gps_2_fix_type'
         ]
         ir_header = ['ir_stream']
 

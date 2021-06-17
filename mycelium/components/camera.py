@@ -103,19 +103,17 @@ class Camera(Base):
     def _get_gps_data(self):
         gps_data_1 = self.rb_0.get_key('GPS_RAW_INT')
         gps_data_2 = self.rb_0.get_key('GPS2_RAW')
-        gps = [None, None, None, None, None, None]
+        gps = [None, None, None, None]
 
         if gps_data_1 is not None:
             # Use 1
             gps[0] = gps_data_1['lat']
             gps[1] = gps_data_1['lon']
-            gps[2] = gps_data_1['fix_type']
 
         if gps_data_2 is not None:
             # Use 2
-            gps[3] = gps_data_2['lat']
-            gps[4] = gps_data_2['lon']
-            gps[5] = gps_data_2['fix_type']
+            gps[2] = gps_data_2['lat']
+            gps[3] = gps_data_2['lon']
 
         return gps
 

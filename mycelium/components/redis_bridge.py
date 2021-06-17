@@ -7,9 +7,9 @@ class RedisBridge:
     DEFAULT_EXPIRY = 60*60*24 # 24 hours
     CONNECTION_ERROR = redis.exceptions.ConnectionError
 
-    def __init__(self, port=6379, db=0):
+    def __init__(self, port=6379, db=0, password=None):
         super().__init__()
-        self.r = redis.Redis(host='localhost', port=port, db=db)
+        self.r = redis.Redis(host='localhost', port=port, db=db, password=password)
         try:
             self.r.ping()
         except redis.exceptions.ConnectionError as e:
